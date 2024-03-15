@@ -1,6 +1,5 @@
 package fr.eldaram.announce.controller.dashboard;
 
-import fr.eldaram.announce.model.Announce;
 import fr.eldaram.announce.model.Users;
 import fr.eldaram.announce.service.AnnounceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,7 @@ public class AnnounceController {
         if (id != null) { // update
             map.put("announce", announceService.byId(id));
         }else{ // ajout
-            map.put("announce", new Announce());
+            map.put("announce", new fr.eldaram.announce.model.Perfume());
         }
 
         map.put("listAnnounce", announceService.byUser(users.getId()));
@@ -31,9 +30,9 @@ public class AnnounceController {
     }
 
     @PostMapping("/dashboard/announce")
-    public String save(@ModelAttribute Announce announce,@AuthenticationPrincipal Users users) {
-        announce.setUsers(users);
-        announceService.save(announce);
+    public String save(@ModelAttribute fr.eldaram.announce.model.Perfume perfume, @AuthenticationPrincipal Users users) {
+        perfume.setUsers(users);
+        announceService.save(perfume);
         return "redirect:/dashboard/announce";
     }
 

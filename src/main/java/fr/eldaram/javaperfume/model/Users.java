@@ -1,4 +1,4 @@
-package fr.eldaram.announce.model;
+package fr.eldaram.javaperfume.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -21,6 +21,8 @@ public class Users implements UserDetails {
     private String prenom;
     private String email;
     private String mdp;
+    private String address;
+    private String phone;
     @Column(columnDefinition = "boolean default true")
     private boolean active;
 

@@ -1,6 +1,6 @@
-package fr.eldaram.announce.repository;
+package fr.eldaram.javaperfume.repository;
 
-import fr.eldaram.announce.model.Users;
+import fr.eldaram.javaperfume.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

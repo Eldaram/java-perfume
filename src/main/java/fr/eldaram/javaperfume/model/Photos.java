@@ -1,4 +1,4 @@
-package fr.eldaram.announce.model;
+package fr.eldaram.javaperfume.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

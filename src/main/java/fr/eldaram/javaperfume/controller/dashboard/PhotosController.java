@@ -1,6 +1,5 @@
 package fr.eldaram.announce.controller.dashboard;
 
-import fr.eldaram.announce.model.Announce;
 import fr.eldaram.announce.model.Photos;
 import fr.eldaram.announce.service.AnnounceService;
 import fr.eldaram.announce.service.PhotoService;
@@ -25,10 +24,10 @@ public class PhotosController {
 
     @PostMapping("/dashboard/photos/animal/save")
     public List<Photos> savePhoto(@RequestParam Integer idAnimal, @RequestParam Integer idPhoto) {
-        Announce announce = announceService.byId(idAnimal);
-        announce.getPhotos().add(photoService.byId(idPhoto));
-        announceService.save(announce);
-        return announce.getPhotos();
+        fr.eldaram.announce.model.Perfume perfume = announceService.byId(idAnimal);
+        perfume.getPhotos().add(photoService.byId(idPhoto));
+        announceService.save(perfume);
+        return perfume.getPhotos();
     }
 
     @GetMapping("/dashboard/photos/animal")
