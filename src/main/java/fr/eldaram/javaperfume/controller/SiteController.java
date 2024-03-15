@@ -1,8 +1,8 @@
-package fr.eldaram.announce.controller;
+package fr.eldaram.javaperfume.controller;
 
-import fr.eldaram.announce.model.Users;
-import fr.eldaram.announce.service.RoleService;
-import fr.eldaram.announce.service.UsersService;
+import fr.eldaram.javaperfume.model.Users;
+import fr.eldaram.javaperfume.service.RoleService;
+import fr.eldaram.javaperfume.service.UsersService;
 import org.springframework.stereotype.Controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;

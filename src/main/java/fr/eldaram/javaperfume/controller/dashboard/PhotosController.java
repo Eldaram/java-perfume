@@ -1,8 +1,9 @@
-package fr.eldaram.announce.controller.dashboard;
+package fr.eldaram.javaperfume.controller.dashboard;
 
-import fr.eldaram.announce.model.Photos;
-import fr.eldaram.announce.service.AnnounceService;
-import fr.eldaram.announce.service.PhotoService;
+import fr.eldaram.javaperfume.model.Perfume;
+import fr.eldaram.javaperfume.model.Photos;
+import fr.eldaram.javaperfume.service.PerfumeService;
+import fr.eldaram.javaperfume.service.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,7 @@ public class PhotosController {
     @Autowired
     private PhotoService photoService;
     @Autowired
-    private AnnounceService announceService;
+    private PerfumeService perfumeService;
 
 
     @PostMapping("/dashboard/photos/save")
@@ -22,16 +23,16 @@ public class PhotosController {
         return photoService.save(photos);
     }
 
-    @PostMapping("/dashboard/photos/animal/save")
-    public List<Photos> savePhoto(@RequestParam Integer idAnimal, @RequestParam Integer idPhoto) {
-        fr.eldaram.announce.model.Perfume perfume = announceService.byId(idAnimal);
+    @PostMapping("/dashboard/photos/perfume/save")
+    public List<Photos> savePhoto(@RequestParam Integer idPerfume, @RequestParam Integer idPhoto) {
+        Perfume perfume = perfumeService.byId(idPerfume);
         perfume.getPhotos().add(photoService.byId(idPhoto));
-        announceService.save(perfume);
+        perfumeService.save(perfume);
         return perfume.getPhotos();
     }
 
-    @GetMapping("/dashboard/photos/animal")
-    public List<Photos> byAnimal(@RequestParam Integer idAnimal) {
-        return announceService.byId(idAnimal).getPhotos();
+    @GetMapping("/dashboard/photos/perfume")
+    public List<Photos> byPerfume(@RequestParam Integer idPerfume) {
+        return perfumeService.byId(idPerfume).getPhotos();
     }
 }

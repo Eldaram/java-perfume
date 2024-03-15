@@ -1,4 +1,4 @@
-package fr.eldaram.announce.controller.dashboard;
+package fr.eldaram.javaperfume.controller.dashboard;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package fr.eldaram.announce.controller.dashboard;
+package fr.eldaram.javaperfume.controller.dashboard;
 
-import fr.eldaram.announce.model.Users;
+import fr.eldaram.javaperfume.model.Users;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
