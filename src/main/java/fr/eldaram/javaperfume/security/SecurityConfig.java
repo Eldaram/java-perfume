@@ -1,6 +1,6 @@
 package fr.eldaram.javaperfume.security;
 
-import fr.eldaram.announce.service.UsersService;
+import fr.eldaram.javaperfume.service.UsersService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;

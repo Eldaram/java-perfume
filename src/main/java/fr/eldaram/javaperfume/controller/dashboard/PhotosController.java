@@ -19,12 +19,6 @@ public class PhotosController {
     @Autowired
     private PerfumeService perfumeService;
 
-    @GetMapping("/addPhoto")
-    public String addPhoto(@RequestParam Integer idPerfume, ModelMap map) {
-        map.put("idPerfume", idPerfume);
-        return "addPhoto";
-    }
-
     @PostMapping("/dashboard/photos/save")
     public Photos savePhoto(@ModelAttribute Photos photos) {
         return photoService.save(photos);

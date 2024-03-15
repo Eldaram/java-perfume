@@ -23,7 +23,7 @@ $(document).ready(function()
         },
         onLoad:function(obj)
         {
-           $.get("/dashboard/photos/animal", {idPerfume: $("#idPerfume").val()}, function (datas) {
+           $.get("/dashboard/photos/perfume", {idPerfume: $("#idPerfume").val()}, function (datas) {
                for (let i = 0; i < datas.length; i++) {
                    obj.createProgress(datas[i]["nom"],'/file/display'+datas[i]["lien"],"");
                }

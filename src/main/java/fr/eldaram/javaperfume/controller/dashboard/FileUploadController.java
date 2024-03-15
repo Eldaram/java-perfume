@@ -53,7 +53,7 @@ public class FileUploadController {
     @GetMapping("/file/display/{annee}/{mois}/{jour}/{fileName}")
     public ResponseEntity<?> displayFile(@PathVariable String fileName, @PathVariable String annee, @PathVariable String mois, @PathVariable String jour){
         // pathUploadFile => Chemin que l'image et sauvegarder
-        File file = new File(localPath+annee+"/"+mois+"/"+jour+"/", fileName);
+        File file = new File(localPath+"/"+annee+"/"+mois+"/"+jour+"/", fileName);
         if (!file.exists()){
             return null;
         }

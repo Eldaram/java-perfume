@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>All perfumes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<div th:replace="fragment/header"></div>
+<div th:replace="header.html :: header"></div>
 <div class="row">
     <div class="card" style="width: 18rem" th:each="perfume : ${perfumeList}">
-        <img class="card-img-top" th:src="${perfume.image}" alt="card image"/>
+        <img class="card-img-top" th:src="@{'/file/display' + ${perfume.photo.lien}}" alt="card image"/>
         <h5 class="card-title" th:text="${perfume.title}"></h5>
         <a class="btn btn-primary" th:href="@{'/' + ${perfume.id}}">Go to details</a>
     </div>

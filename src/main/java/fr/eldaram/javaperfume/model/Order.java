@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 @Data
 public class Order {
     @Id
@@ -20,5 +20,5 @@ public class Order {
     @ManyToOne
     private Users users;
 
-    private Date date;
+    private String date;
 }

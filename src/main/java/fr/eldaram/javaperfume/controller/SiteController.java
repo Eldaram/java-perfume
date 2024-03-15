@@ -17,6 +17,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import static org.springframework.security.web.context.HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY;
 import java.util.List;
@@ -67,6 +68,12 @@ public class SiteController {
     @GetMapping("/addPerfume")
     public String addPerfume() {
         return "addPerfume";
+    }
+
+    @GetMapping("/dashboard/addPhoto/{idPerfume}")
+    public String addPhoto(@PathVariable Integer idPerfume, ModelMap map) {
+        map.put("idPerfume", idPerfume);
+        return "dashboard/addPhoto";
     }
 
     @GetMapping("/login")
