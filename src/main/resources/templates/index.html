@@ -11,7 +11,8 @@
     <div class="card" style="width: 18rem" th:each="perfume : ${perfumeList}">
         <img class="card-img-top" th:src="@{'/file/display' + ${perfume.photo.lien}}" alt="card image"/>
         <h5 class="card-title" th:text="${perfume.title}"></h5>
-        <a class="btn btn-primary" th:href="@{'/' + ${perfume.id}}">Go to details</a>
+        <p class="card-text" th:text="${perfume.shortDescription}"></p>
+        <a class="btn btn-primary" th:href="@{'/perfume/' + ${perfume.id}}">Go to details</a>
     </div>
 </div>
 <a class="btn btn-primary" href="/addPerfume">Add a perfume</a>

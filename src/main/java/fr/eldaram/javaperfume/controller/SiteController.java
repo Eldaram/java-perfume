@@ -76,6 +76,12 @@ public class SiteController {
         return "dashboard/addPhoto";
     }
 
+    @GetMapping("/perfume/{idPerfume}")
+    public String singlePerfume(@PathVariable Integer idPerfume, ModelMap map) {
+        map.put("perfume", perfumeService.byId(idPerfume));
+        return "perfume";
+    }
+
     @GetMapping("/login")
     public String login(ModelMap map) {
         map.put("user", new Users());
