@@ -14,13 +14,10 @@ public class Perfume {
     private Integer id;
 
     private String title;
-    private String description;
     private String shortDescription;
+    private String description;
     private String price;
 
-    @ManyToOne
-    private Users users;
-
-    @OneToMany
-    private List<Photos> photos;
+    @OneToOne
+    private Photos photo;
 }

@@ -1,6 +1,8 @@
 package fr.eldaram.javaperfume.controller;
 
+import fr.eldaram.javaperfume.model.Role;
 import fr.eldaram.javaperfume.model.Users;
+import fr.eldaram.javaperfume.service.PerfumeService;
 import fr.eldaram.javaperfume.service.RoleService;
 import fr.eldaram.javaperfume.service.UsersService;
 import org.springframework.stereotype.Controller;
@@ -28,11 +30,13 @@ public class SiteController {
     private UsersService usersService;
     @Autowired
     private RoleService roleService;
+    @Autowired
+    private PerfumeService perfumeService;
 
     @GetMapping("/")
-    public String index(HttpServletRequest req) {
-
-        //TODO:Seulement pour les test
+    public String index(ModelMap map) {
+/*
+        //Seulement pour les test
         Users user = usersService.byId(1);
 
         Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
@@ -42,22 +46,27 @@ public class SiteController {
         HttpSession session = req.getSession(true);
         session.setAttribute(SPRING_SECURITY_CONTEXT_KEY, sc);
         return "redirect:/dashboard/animal";
+*/
+        if (!usersService.isUserExist("dragan@ribes.fr")) {
+            Role roleAdmin = this.roleService.findOrSave("ADMIN");
 
-/*
-        Role roleAdmin = new Role();
-        roleAdmin.setNom("ADMIN");
-        this.roleService.save(roleAdmin);
+            Users users = new Users();
+            users.setNom("Ribes");
+            users.setPrenom("Dragan");
+            users.setEmail("dragan@ribes.fr");
+            users.setActive(true);
+            users.setMdp(bCryptPasswordEncoder.encode("1234"));
+            users.setRoles(List.of(roleAdmin));
+            this.usersService.save(users);
+        }
 
-        Users users = new Users();
-        users.setNom("boumil");
-        users.setPrenom("mounir");
-        users.setEmail("toto@titi.fr");
-        users.setActive(true);
-        users.setMdp(bCryptPasswordEncoder.encode("1234"));
-        users.setRoles(List.of(roleAdmin));
-        this.usersService.save(users);*/
+        map.put("perfumeList", perfumeService.findAll());
+        return "index";
+    }
 
-        //return "index";
+    @GetMapping("/addPerfume")
+    public String addPerfume() {
+        return "addPerfume";
     }
 
     @GetMapping("/login")

@@ -30,9 +30,8 @@ public class PerfumeController {
 
     @PostMapping("/dashboard/perfume")
     public String save(@ModelAttribute Perfume perfume, @AuthenticationPrincipal Users users) {
-        perfume.setUsers(users);
-        perfumeService.save(perfume);
-        return "redirect:/dashboard/perfume";
+        Perfume addedPerfume = perfumeService.save(perfume);
+        return "redirect:/addPhoto/" + addedPerfume.getId();
     }
 
 

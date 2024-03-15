@@ -30,4 +30,9 @@ public class UsersService implements UserDetailsService {
         }
         return users;
     }
+
+    public boolean isUserExist(String username) {
+        Users user = usersRepository.findByEmail(username);
+        return user != null;
+    }
 }
