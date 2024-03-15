@@ -1,7 +1,7 @@
-package fr.eldaram.announce.service;
+package fr.eldaram.javaperfume.service;
 
-import fr.eldaram.announce.model.Photos;
-import fr.eldaram.announce.repository.PhotosRepository;
+import fr.eldaram.javaperfume.model.Photos;
+import fr.eldaram.javaperfume.repository.PhotosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

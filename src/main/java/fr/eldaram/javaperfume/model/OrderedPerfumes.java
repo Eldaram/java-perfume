@@ -15,4 +15,5 @@ public class OrderedPerfumes {
     private Perfume perfume;
 
     private Integer price;
+    private Integer quantity;
 }

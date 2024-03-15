@@ -1,7 +1,7 @@
-package fr.eldaram.announce.service;
+package fr.eldaram.javaperfume.service;
 
-import fr.eldaram.announce.model.Role;
-import fr.eldaram.announce.repository.RoleRepository;
+import fr.eldaram.javaperfume.model.Role;
+import fr.eldaram.javaperfume.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

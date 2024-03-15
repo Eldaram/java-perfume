@@ -1,9 +1,9 @@
-package fr.eldaram.announce.security;
+package fr.eldaram.javaperfume.security;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import fr.eldaram.announce.model.Role;
-import fr.eldaram.announce.model.Users;
+import fr.eldaram.javaperfume.model.Role;
+import fr.eldaram.javaperfume.model.Users;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;

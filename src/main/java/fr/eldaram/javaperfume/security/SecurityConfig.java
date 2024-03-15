@@ -1,4 +1,4 @@
-package fr.eldaram.announce.security;
+package fr.eldaram.javaperfume.security;
 
 import fr.eldaram.announce.service.UsersService;
 import org.springframework.context.annotation.Bean;

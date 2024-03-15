@@ -8,5 +8,4 @@ import java.util.List;
 
 @Repository
 public interface PerfumeRepository extends JpaRepository<Perfume, Integer> {
-    List<Perfume> findByUsers_Id(Integer id);
 }

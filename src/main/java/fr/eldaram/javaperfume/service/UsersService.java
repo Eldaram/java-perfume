@@ -1,7 +1,7 @@
-package fr.eldaram.announce.service;
+package fr.eldaram.javaperfume.service;
 
-import fr.eldaram.announce.model.Users;
-import fr.eldaram.announce.repository.UsersRepository;
+import fr.eldaram.javaperfume.model.Users;
+import fr.eldaram.javaperfume.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
